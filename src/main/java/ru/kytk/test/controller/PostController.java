@@ -1,7 +1,8 @@
 package ru.kytk.test.controller;
 
 import java.util.List;
-
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,9 @@ public class PostController {
         return employeeRepository.save(employee);
     }
     
-
+    @DeleteMapping("delete/{id}")
+    public String deletebyID(@PathVariable long id) {
+        employeeRepository.deleteById(id);
+        return null;
+    }
 }
-

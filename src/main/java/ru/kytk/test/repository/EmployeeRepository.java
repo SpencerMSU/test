@@ -16,6 +16,4 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     @Query(value = "SELECT * FROM employees where id = :id" , nativeQuery = true)
     List<Employee> findbyid(@Param("id") int id);
 
-    @Query(value = "INSERT INTO employees (first_name,last_name,department,salary) VALUES ('ЕГОО','Прекол','РАБотник',15000)" , nativeQuery = true)
-    List<Employee> TestEmployee();
 }

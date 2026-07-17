@@ -2,6 +2,7 @@ package ru.kytk.test.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,6 @@ public class EmployeeController {
     @GetMapping("current/{id}")
     public List<Employee> getEmployeeById(@PathVariable int id) {
     return employeeRepository.findbyid(id);
-
+    
 }
 }
